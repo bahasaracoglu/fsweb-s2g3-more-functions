@@ -16,9 +16,18 @@
   örnek output: ""
 */
 
-function dosyaAdiniBul(/* kodlar buraya */) {
-  // kodlar buraya
+function dosyaAdiniBul(dosyaYolu) {
+  const dosyaYoluDizi = dosyaYolu.split("/");
+  if (dosyaYolu === "") {
+    let dosyaAdi = ""
+    return dosyaAdi
+  } else {
+    let dosyaAdi = dosyaYoluDizi[dosyaYoluDizi.length - 1]
+    return dosyaAdi
+  }
 }
+
+console.log("Görev-1__", dosyaAdiniBul("C:/Users/johnsmith/Music/Beethoven_5.mp3"))
 
 /*
   GÖREV 2
@@ -38,9 +47,12 @@ function dosyaAdiniBul(/* kodlar buraya */) {
   örnek output: 104
 */
 
-function ortalamaBul(/* kodlar buraya */) {
-  // kodlar buraya
+function ortalamaBul(sayiDizisi) {
+  
+
 }
+
+console.log("Görev-2__", ortalamaBul([50, -26, 153, 7]))
 
 /*
   GÖREV 3
