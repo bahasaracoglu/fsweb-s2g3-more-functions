@@ -80,18 +80,13 @@ console.log("Görev-2__", ortalamaBul([50, -26, 153, 7]))
 function ortalamadanBuyukleriBul(sayilarDizisi, ortalamaBulanFonksiyon) {
 
   let aritmetikOrtalama = ortalamaBulanFonksiyon(sayilarDizisi)
-  let filtrelenmisDizi = sayilarDizisi.map(function (sayi) {
-    if (sayi >= aritmetikOrtalama) {
-      return sayi
-    } else {
-      return null
-    }
-  });
-  return filtrelenmisDizi
+  const filtrelenmisDizi = sayilarDizisi.filter((sayi) => sayi >= aritmetikOrtalama)
+
+  return sayilarDizisi.length > 0 ? filtrelenmisDizi : null;
 
 }
 
-console.log("Görev-3__", ortalamadanBuyukleriBul([50, -26, 153, 7], ortalamaBul));
+console.log("Görev-3__", ortalamadanBuyukleriBul([], ortalamaBul));
 
 
 /* !!!! Burdan aşağısını değiştirmeyin !!!! */
