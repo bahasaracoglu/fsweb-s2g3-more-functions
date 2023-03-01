@@ -27,6 +27,8 @@ function dosyaAdiniBul(dosyaYolu) {
   }
 }
 
+
+
 console.log("Görev-1__", dosyaAdiniBul("C:/Users/johnsmith/Music/Beethoven_5.mp3"))
 
 /*
@@ -48,8 +50,9 @@ console.log("Görev-1__", dosyaAdiniBul("C:/Users/johnsmith/Music/Beethoven_5.mp
 */
 
 function ortalamaBul(sayiDizisi) {
-  
 
+  let aritmetikOrtalama = (sayiDizisi.reduce((x, i) => x + i, 0)) / sayiDizisi.length;
+  return sayiDizisi.length > 0 ? aritmetikOrtalama : null;
 }
 
 console.log("Görev-2__", ortalamaBul([50, -26, 153, 7]))
@@ -74,9 +77,22 @@ console.log("Görev-2__", ortalamaBul([50, -26, 153, 7]))
   örnek output: [109, 216, 288, 143, 185, 194]
 */
 
-function ortalamadanBuyukleriBul(/* kodlar buraya */) {
-  // kodlar buraya
+function ortalamadanBuyukleriBul(sayilarDizisi, ortalamaBulanFonksiyon) {
+
+  let aritmetikOrtalama = ortalamaBulanFonksiyon(sayilarDizisi)
+  let filtrelenmisDizi = sayilarDizisi.map(function (sayi) {
+    if (sayi >= aritmetikOrtalama) {
+      return sayi
+    } else {
+      return null
+    }
+  });
+  return filtrelenmisDizi
+
 }
+
+console.log("Görev-3__", ortalamadanBuyukleriBul([50, -26, 153, 7], ortalamaBul));
+
 
 /* !!!! Burdan aşağısını değiştirmeyin !!!! */
 function as() {
